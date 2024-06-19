@@ -22,7 +22,7 @@ async function randomVideoGenerator(user) {
     localStorage.getItem("fetch") == undefined
   ) {
     const userFetch = await fetch(
-      `http://localhost:10000/api/videos?userName=${user}`
+      `https://random-yt-video-picker.onrender.com/api/videos?userName=${user}`
     );
     const userData = await userFetch.json();
     localStorage.setItem("fetch", JSON.stringify(userData));
