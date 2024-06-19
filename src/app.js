@@ -16,6 +16,7 @@ app.use(
   cors({
     origin: [
       `http://localhost:${port}`,
+      "http://localhost:8000",
       "https://random-yt-video-picker.onrender.com",
     ],
   })
