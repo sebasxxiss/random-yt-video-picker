@@ -15,7 +15,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      `http://localhost:${port}`,
+      `http://localhost:10000`,
       "http://localhost:8000",
       "https://random-yt-video-picker.onrender.com",
     ],
