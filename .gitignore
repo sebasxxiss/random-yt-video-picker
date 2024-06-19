@@ -1,0 +1,7 @@
+node_modules
+
+#another way to cache the videos
+public/database.js
+#API_KEY
+.env
+
