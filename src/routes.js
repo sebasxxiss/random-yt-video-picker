@@ -13,8 +13,9 @@ router.get("/videos", async (req, res) => {
     }
     if (userName == undefined || userName == null) {
       throw new Error("the channel name is undefined");
+    } else {
+      throw new Error("the channel name has an invalid format");
     }
-    throw new Error("the channel name has an invalid format");
   } catch (error) {
     console.log(error);
   }
