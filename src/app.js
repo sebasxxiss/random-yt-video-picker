@@ -2,6 +2,7 @@ import express from "express";
 import router from "./routes.js";
 import cors from "cors";
 
+const port = process.env.PORT ?? 10000;
 /*let origin = "";
 const port = process.env.PORT ?? 10000;
 if (process.env.NODE_ENV === "developmnet") {
