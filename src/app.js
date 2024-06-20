@@ -2,12 +2,12 @@ import express from "express";
 import router from "./routes.js";
 import cors from "cors";
 
-const port = process.env.PORT ?? 5000;
+const port = process.env.PORT ?? 8000;
 const app = express();
 app.use(
   cors({
     origin: [
-      `http://localhost:${port}`,
+      `http://localhost:8000`,
       "https://random-yt-video-picker.onrender.com",
     ],
   })
