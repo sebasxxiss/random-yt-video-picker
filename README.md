@@ -43,7 +43,7 @@ To start the application in production mode, run:
 
 npm start
 
-The server will be running at http://localhost:10000.
+The server will be running at http://localhost:8000.
 Project Structure
 
     .env: Environment variables.
