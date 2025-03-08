@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/videos", async (req, res) => {
   res.header("Acces-Control-Allow-Origin", [
-    "https://random-yt-video-picker.onrender.com",
+    "https://random-yt-video-picker-production.up.railway.app",
     "https://ytrandomvideo.netlify.app",
   ]);
   const userName = req.query.userName;
