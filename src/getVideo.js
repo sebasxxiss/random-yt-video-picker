@@ -16,13 +16,12 @@ export async function getUserId(user) {
   return userId;
 }
 
-export async function getAllVideos(nextPage, username) {
-  const user = username;
-  const userId = await getUserId(user);
+export async function getAllVideos(nextPage, userId) {
+  const newUserId = userId;
   if (nextPage == null || nextPage == undefined) {
     nextPage = "";
   }
-  const userPlaylistId = userId.split("");
+  const userPlaylistId = newUserId.split("");
   userPlaylistId[1] = "U";
   const newUserPlayListId = userPlaylistId.join("");
   const ytUserVideosFetch = await fetch(
@@ -41,5 +40,5 @@ export async function getAllVideos(nextPage, username) {
     return newAllVideos.flat(1);
   }
   console.log(numberOfVideos);
-  return getAllVideos(userVideos.nextPageToken, user);
+  return getAllVideos(userVideos.nextPageToken, newUserId);
 }

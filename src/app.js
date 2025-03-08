@@ -1,17 +1,24 @@
 import express from "express";
 import router from "./routes.js";
 import cors from "cors";
+import jwt from "jsonwebtoken";
 
 const port = process.env.PORT ?? 8000;
 const app = express();
+let devOrigin;
+if (process.env.NODE_ENV == "development") {
+  devOrigin = "http://localhost:8000";
+}
 app.use(
   cors({
     origin: [
-      `http://localhost:8000`,
+      devOrigin,
       "https://random-yt-video-picker.onrender.com",
+      "https://ytrandomvideo.netlify.app/",
     ],
   })
 );
+
 app.use(express.json());
 app.use("/", express.static("public"));
 app.use("/api", router);
