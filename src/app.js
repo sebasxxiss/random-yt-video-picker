@@ -14,6 +14,7 @@ app.use(
     origin: [
       devOrigin,
       "https://random-yt-video-picker.onrender.com",
+      "https://random-yt-video-picker-production.up.railway.app/",
       "https://ytrandomvideo.netlify.app",
     ],
   })
