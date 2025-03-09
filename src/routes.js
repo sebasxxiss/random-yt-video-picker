@@ -8,6 +8,10 @@ router.get("/videos", async (req, res) => {
     "https://random-yt-video-picker-production.up.railway.app",
     "https://ytrandomvideo.netlify.app",
   ]);
+  if (req.header("Origin") == undefined) {
+    res.send("Origen no admitido");
+    return;
+  }
   const userName = req.query.userName;
   try {
     if (userName.length <= 50) {

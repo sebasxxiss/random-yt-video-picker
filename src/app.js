@@ -6,9 +6,11 @@ import jwt from "jsonwebtoken";
 const port = process.env.PORT ?? 8000;
 const app = express();
 let devOrigin;
+
 if (process.env.NODE_ENV == "development") {
-  devOrigin = "http://localhost:8000";
+  devOrigin = "http://localhost:5173";
 }
+
 app.use(
   cors({
     origin: [
@@ -21,7 +23,6 @@ app.use(
 );
 
 app.use(express.json());
-app.use("/", express.static("public"));
 app.use("/api", router);
 
 app.listen(port);
